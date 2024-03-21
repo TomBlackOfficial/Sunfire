@@ -4,6 +4,9 @@
     <Filter Include="Sunfire">
       <UniqueIdentifier>{6125CD11-CD04-4CAD-D61C-D783427BB20E}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Sunfire\Events">
+      <UniqueIdentifier>{25DA583D-11A8-4C43-FA3B-BD69E6A828A8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Sunfire.h" />
@@ -16,7 +19,13 @@
     <ClInclude Include="src\Sunfire\EntryPoint.h">
       <Filter>Sunfire</Filter>
     </ClInclude>
+    <ClInclude Include="src\Sunfire\Events\Event.h">
+      <Filter>Sunfire\Events</Filter>
+    </ClInclude>
     <ClInclude Include="src\Sunfire\Log.h">
+      <Filter>Sunfire</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Sunfire\Test.h">
       <Filter>Sunfire</Filter>
     </ClInclude>
   </ItemGroup>
