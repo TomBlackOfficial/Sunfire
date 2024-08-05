@@ -2,8 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
 namespace Sunfire {
 
 	class SUNFIRE_API WindowResizeEvent : public Event

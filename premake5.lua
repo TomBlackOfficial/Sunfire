@@ -10,6 +10,12 @@ workspace "Sunfire"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+-- Include directories relative to root folder (solution directory)
+IncludeDir = {}
+IncludeDir["GLFW"] = "Sunfire/vendor/GLFW/include"
+
+include "Sunfire/vendor/GLFW"
+
 project "Sunfire"
 	location "Sunfire"
 	kind "SharedLib"
@@ -17,6 +23,9 @@ project "Sunfire"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+
+	pchheader "sfpch.h"
+	pchsource "Sunfire/src/sfpch.cpp"
 
 	files
 	{
@@ -27,7 +36,15 @@ project "Sunfire"
 	includedirs
 	{
 		"%{prj.name}/src",
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}"
+	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib",
+		"dwmapi.lib"
 	}
 
 	filter "system:windows"
@@ -48,14 +65,17 @@ project "Sunfire"
 
 	filter "configurations:Debug"
 		defines "SF_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "SF_RELEASE"
+		buildoptions "/MD"
 		symbols "On"
 
 	filter "configurations:Dist"
 		defines "SF_DIST"
+		buildoptions "/MD"
 		symbols "On"
 
 project "Sandbox"
@@ -95,12 +115,15 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "SF_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "SF_RELEASE"
+		buildoptions "/MD"
 		symbols "On"
 
 	filter "configurations:Dist"
 		defines "SF_DIST"
+		buildoptions "/MD"
 		symbols "On"

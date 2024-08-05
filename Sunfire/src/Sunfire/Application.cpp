@@ -1,13 +1,16 @@
+#include "sfpch.h"
 #include "Application.h"
 
 #include "Sunfire/Events/ApplicationEvent.h"
 #include "Sunfire/Log.h"
 
+#include <GLFW/glfw3.h>
+
 namespace Sunfire {
 
 	Application::Application()
 	{
-
+		m_Window = std::unique_ptr<Window>(Window::Create());
 	}
 
 	Application::~Application()
@@ -17,17 +20,12 @@ namespace Sunfire {
 
 	void Application::Run()
 	{
-		WindowResizeEvent e(1280, 720);
-		if (e.IsInCategory(EventCategoryApplication))
+		while (m_Running)
 		{
-			SF_TRACE(e);
+			glClearColor(1, 0, 1, 1);
+			glClear(GL_COLOR_BUFFER_BIT);
+			m_Window->OnUpdate();
 		}
-		if (e.IsInCategory(EventCategoryInput))
-		{
-			SF_TRACE(e);
-		}
-
-		while (true);
 	}
 
 }

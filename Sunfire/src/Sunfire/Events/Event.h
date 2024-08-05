@@ -1,9 +1,7 @@
 #pragma once
 
+#include "sfpch.h"
 #include "Sunfire/Core.h"
-
-#include <string>
-#include <functional>
 
 namespace Sunfire {
 
