@@ -4,3 +4,6 @@
 [submodule "Sunfire/vendor/GLFW"]
 	path = Sunfire/vendor/GLFW
 	url = https://github.com/TheCherno/GLFW
+[submodule "Hazel/vendor/imgui"]
+	path = Hazel/vendor/imgui
+	url = https://github.com/TheCherno/imgui
