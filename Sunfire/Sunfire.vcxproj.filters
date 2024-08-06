@@ -40,6 +40,12 @@
     <ClInclude Include="src\Sunfire\Events\MouseEvent.h">
       <Filter>Sunfire\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Sunfire\Layer.h">
+      <Filter>Sunfire</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Sunfire\LayerStack.h">
+      <Filter>Sunfire</Filter>
+    </ClInclude>
     <ClInclude Include="src\Sunfire\Log.h">
       <Filter>Sunfire</Filter>
     </ClInclude>
@@ -53,6 +59,12 @@
       <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\Sunfire\Application.cpp">
+      <Filter>Sunfire</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Sunfire\Layer.cpp">
+      <Filter>Sunfire</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Sunfire\LayerStack.cpp">
       <Filter>Sunfire</Filter>
     </ClCompile>
     <ClCompile Include="src\Sunfire\Log.cpp">
