@@ -80,7 +80,7 @@
       <PrecompiledHeaderFile>sfpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>SF_PLATFORM_WINDOWS;SF_BUILD_DLL;GLFW_INCLUDE_NONE;SF_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\ImGui\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -104,7 +104,7 @@
       <PrecompiledHeaderFile>sfpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>SF_PLATFORM_WINDOWS;SF_BUILD_DLL;GLFW_INCLUDE_NONE;SF_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\ImGui\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -128,7 +128,7 @@
       <PrecompiledHeaderFile>sfpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>SF_PLATFORM_WINDOWS;SF_BUILD_DLL;GLFW_INCLUDE_NONE;SF_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\ImGui\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -147,6 +147,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\Sunfire.h" />
     <ClInclude Include="src\Sunfire\Application.h" />
@@ -156,6 +157,7 @@
     <ClInclude Include="src\Sunfire\Events\Event.h" />
     <ClInclude Include="src\Sunfire\Events\KeyEvent.h" />
     <ClInclude Include="src\Sunfire\Events\MouseEvent.h" />
+    <ClInclude Include="src\Sunfire\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\Sunfire\Layer.h" />
     <ClInclude Include="src\Sunfire\LayerStack.h" />
     <ClInclude Include="src\Sunfire\Log.h" />
@@ -163,8 +165,10 @@
     <ClInclude Include="src\sfpch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\Sunfire\Application.cpp" />
+    <ClCompile Include="src\Sunfire\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\Sunfire\Layer.cpp" />
     <ClCompile Include="src\Sunfire\LayerStack.cpp" />
     <ClCompile Include="src\Sunfire\Log.cpp" />
